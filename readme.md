@@ -45,6 +45,8 @@ Start the server
   npm run start
 ```
 
+Go to `registration.html` page
+
 
 ## Author
 
