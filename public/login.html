@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="./src/login.js" defer></script>
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <title>Login</title>
+</head>
+<body>
+    <nav>
+        <div class="space"></div>
+        <div class="nav-content">
+            <div>
+                <a href="#">
+                    <p>Task Manager</p>
+                </a>
+            </div>
+            <div class="nav-list">
+                <ul class="nav-list__items">
+                    <li class="nav-list__item cta"><a href="/public/registration.html">Registration</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="space"></div>
+    </nav>
+    <main>
+        <div class="space"></div>
+        <section class="login">
+            <h1>User Login</h1>
+            <div class="login-fields">
+                <div class="email">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" autocomplete="off">
+                </div>
+                <div class="password">
+                    <label for="password">password</label>
+                    <input type="password" name="password">
+                </div>
+                <button class="btn primary" type="submit">Login</button>
+            <p>Dont have an account? <a href="/public/registration.html">register</a> from here!</p>
+            </div>
+        </section>
+        <div class="space"></div>
+    </main>
+    <footer></footer>
+</body>
+</html>

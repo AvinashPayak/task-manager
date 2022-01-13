@@ -1,0 +1,283 @@
+
+/* Basic Start */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+}
+
+:root {
+    --primary: #6C63FF;
+    --secondary: white;
+    --danger: crimson;
+    --success: green;
+    --warning: orange;
+    --dark: #333;
+    --light: whitesmoke
+}
+
+.btn {
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ li {
+     list-style: none;
+ }
+
+ h1 {
+     font-size: 60px;
+ }
+
+ label {
+     margin: 10px;
+ }
+input {
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+ p{
+     font-size: 22px;
+ }
+
+.success {
+    background-color:var(--success);
+    color: var(--secondary);
+}
+.danger {
+    background-color: var(--danger);
+    color: var(--secondary);
+}
+
+.primary {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+.warning {
+    background-color: orange;
+    color: var(--secondary);
+}
+
+.cta {
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 10px 20px;
+    border-radius: 100px;
+}
+
+
+/* Basics End*/
+
+/* Modals Start */
+
+.error {
+    visibility: hidden;
+    color: crimson;
+}
+
+.error-active {
+    visibility: visible;
+}
+
+.modal-bg, .modal-bg-2{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal, .edit-modal{
+    position: relative;
+    background-color: white;
+    padding: 100px;
+    width: 42%;
+}
+
+.modal .task-input,
+.modal .deadline,
+.modal .priority,
+.edit-modal .task-input,
+.edit-modal .deadline,
+.edit-modal .priority {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal span,
+.edit-modal span {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal span, .edit-modal span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: bold;
+}
+
+/* Modals End*/
+
+/* Nav Start */
+
+nav {
+   display: flex;
+   background-color: var(--primary); 
+   color: var(--secondary);
+}
+
+.space {
+    flex: 1;
+}
+
+.nav-content {
+    flex: 0 0 1024px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 10px 0;
+}
+/* Nav End */
+
+/* Registration Start */
+main {
+    display: flex;
+    justify-content: space-between;
+
+}
+.registration,
+.login,
+.dashboard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 1024px;
+    padding: 30px 20px;
+}
+
+
+.registration-fields .name,
+.registration-fields .email,
+.registration-fields .password,
+.login-fields .email,
+.login-fields .password {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.registration-fields button,
+.login-fields button {
+    position: relative;
+
+    width: 100%;
+}
+.registration-fields p,
+.login-fields p {
+    text-align: center;
+    margin: 10px 0;
+}
+.registration-fields a,
+.login-fields a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+/* Registration End*/
+
+/*  */
+/* */
+
+
+
+/* Tasks Start */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.tasks,
+.completed-tasks {
+    width: 100%;
+}
+.task {
+    cursor: pointer;
+    background: white;
+    padding: 30px;
+    margin: 20px;
+    flex: 0 0 30px;
+    box-shadow: 3px 5px 20px #00000029;
+}
+.task-content__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.task-content__header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-content__header .category{
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.task-content__header .priority,
+.task-content__footer .created,
+.task-content__header .due{
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.task-content__main p{
+    width: 100%;
+    padding: 10px;
+}
+.task-content__main button {
+    min-width: 30%;
+}
+
+.task-content__footer{
+    display: flex;
+    justify-content: flex-end;
+}
+.checkbox {
+    width: 100px;
+    height: 100px;
+}
+
+.crossed {
+    text-decoration:line-through;
+}
+
+
+/* Tasks End */
+
+
+
+

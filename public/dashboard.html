@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" rel="type/stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="src/dashboard.js" defer></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav>
+        <div class="space"></div>
+        <div class="nav-content">
+            <div>
+                <a href="#">
+                    <p>Task Manager</p>
+                </a>
+            </div>
+            <div class="nav-list">
+                <ul class="nav-list__items">
+                    <li class="nav-list__item logout cta"><a href="/public/login.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="space"></div>
+    </nav>
+    <main>
+        <div class="space"></div>
+        <section class="dashboard">
+            <h1>Your Tasks</h1>
+        <div class="add-task">
+            <button class="btn primary">Add task</button>
+        </div>
+        <div class="tasks"></div>
+        <div class="completed-tasks"></div>
+        </section>
+        <div class="space"></div>
+    </main>
+    <footer></footer>
+    
+    <div class="modal-bg">
+        <div class="modal">
+            <div class="task-input">
+                <label for="task">Enter Task</label>
+                <input type="text" name="task" placeholder="task" autocomplete="off" required>
+            </div>
+            <div class="deadline">
+                <label for="date">Due Date</label>
+                <input type="date" name="date" required>
+            </div>
+            <div class="priority">
+                <label for="priority">Set Priority</label>
+                <input type="number" step="1" min="1" max="3" name="priority" value="1" required>
+            </div>
+            <button class="btn primary">Add</button>
+            <p class="error">Please enter valid details!</p>
+            <span class="danger btn">X</span>
+        </div>
+    </div>
+
+    <div class="modal-bg-2">
+        <div class="edit-modal">
+            <div class="task-input">
+                <label for="task">Enter Task</label>
+                <input type="text" name="task" placeholder="task" autocomplete="off" required>
+            </div>
+            <div class="deadline">
+                <label for="date">Due Date</label>
+                <input type="date" name="date" required>
+            </div>
+            <div class="priority">
+                <label for="priority">Set Priority</label>
+                <input type="number" step="1" min="1" max="3" name="priority" value="1" required>
+            </div>
+            <button class="btn primary">Update</button>
+            <p class="error">Please enter valid details!</p>
+            <span class="danger btn">X</span>
+        </div>
+    </div>        
+    </div>
+    
+</body>
+</html>
