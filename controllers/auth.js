@@ -23,7 +23,7 @@ exports.putSignup = (req,res,next)=>{
         res.status(200).json({message: 'user created successfully'});
     })
     .catch(err => {
-        console.log(err, "yo");
+        console.log(err);
     }) 
 }
 
@@ -33,7 +33,9 @@ exports.postLogin = (req,res,next)=>{
     let user;
     Users.auth(email).then(([result])=>{
         if(result.length == 0) {
-            res.status(205).json({message: 'No user found'});
+            const error = new Error('email not found!');
+            error.status = 401;
+            throw error;
         }
         user = result[0];
         return bcrypt.compare(password,result[0].password);
@@ -41,7 +43,7 @@ exports.postLogin = (req,res,next)=>{
     .then((isEqual)=>{
         if(!isEqual){
             const error = new Error('Wrong password');
-            error.status - 401;
+            error.status = 401;
             throw error;
         }
         else {
@@ -51,5 +53,6 @@ exports.postLogin = (req,res,next)=>{
     })
     .catch(err=>{
         console.log(err);
+        res.status(401).json({message: err})
     })
 }
