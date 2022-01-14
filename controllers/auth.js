@@ -23,6 +23,7 @@ exports.putSignup = (req,res,next)=>{
         res.status(200).json({message: 'user created successfully'});
     })
     .catch(err => {
+        res.status(500);
         console.log(err);
     }) 
 }

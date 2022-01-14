@@ -8,6 +8,10 @@ exports.getTasks = (req, res, next) => {
             tasks: tasks
         })
     })
+    .catch(err =>{
+        res.status(500);
+        console.log(err);
+    })
 };
 
 exports.createTask = (req, res, next) => {
@@ -23,6 +27,7 @@ exports.createTask = (req, res, next) => {
     task.save().then(()=>{
         res.redirect('/tasks');
     }).catch(err=>{
+        res.status(500);
         console.log(err);
     })
 }
@@ -41,6 +46,7 @@ exports.editTask = (req,res,next) => {
     task.update().then(()=>{
         res.json({message: 'updated successfully'});
     }).catch(err=>{
+        res.status(500);
         console.log(err);
     })
 }
@@ -49,5 +55,9 @@ exports.deleteTask = (req, res, next) => {
     const taskId = req.body.taskId;
     Tasks.delete(taskId).then(()=>{
         res.json({message:'deleted successfully'});
-    });
+    })
+    .catch(err=>{
+        res.status(500);
+        console.log(err);
+    })
 }
