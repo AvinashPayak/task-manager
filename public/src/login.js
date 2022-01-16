@@ -20,6 +20,7 @@ const loginUser = async () => {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('userId', response.data.userId);
         const remainingMilliseconds = 60 * 60 * 1000;
+        console.log(localStorage.getItem('token'));
         const expiryDate = new Date(new Date().getTime() + remainingMilliseconds);
         localStorage.setItem('expiryDate', expiryDate.toISOString());
         window.location.href = 'http://127.0.0.1:5500/public/dashboard.html';

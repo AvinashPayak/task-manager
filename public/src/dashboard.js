@@ -48,13 +48,16 @@ const fetchTasks = async () => {
             let category = document.createElement('span');
             category.classList.add('category');
             let diff = returnCategory(tasks[i].deadline);
+            console.log(diff);
             let categoryData;
-            if(diff<0){
-                categoryData = `Overdue by ${Math.abs(diff)} day(s)`;
+            if(diff<=-1){
+                console.log(diff);
+                categoryData = `Overdue by ${Math.floor(Math.abs(diff))} day(s)`;
                 category.classList.add('danger');    
             }
             else if(diff>0){
-                categoryData = `due in ${diff} day(s)`;
+                console.log(diff);
+                categoryData = `due in ${Math.floor(Math.abs(diff))} day(s)`;
                 category.classList.add('success'); 
             }
             else {
@@ -319,10 +322,7 @@ const returnDate = (value)=>{
 const returnCategory = (date1)=>{
     date1 = new Date(date1);
     let date2 = new Date();
-    let diff = Math.floor((date1-date2)/(1000*3600*24));
+    let diff = (date1-date2)/(1000*3600*24);
     return diff;
 }
-
 fetchTasks();
-
-
